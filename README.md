@@ -17,7 +17,7 @@ python CanonShutterCounter.py
 ```
 
 **Or use the pre-built EXE** — `dist/CanonShutterCounter.exe`  
-→ `exiftool.exe` must be in the same folder.
+→ Fully self-contained, no additional files needed.
 
 ---
 
@@ -28,7 +28,7 @@ pyinstaller --clean CanonShutterCounter.spec
 ```
 
 Output: `dist/CanonShutterCounter.exe`  
-Then copy `exiftool.exe` into `dist/`.
+Fully self-contained — `exiftool.exe` is embedded automatically.
 
 ---
 

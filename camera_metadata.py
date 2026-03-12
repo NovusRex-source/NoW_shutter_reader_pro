@@ -25,16 +25,38 @@ class CameraMetadataReader:
         self.exiftool_path = self.find_exiftool()
 
     def find_exiftool(self):
-        """Find ExifTool executable"""
-        exiftool = shutil.which("exiftool")
-        if exiftool:
-            return exiftool
+        """
+        Find ExifTool executable.
+        When running as a PyInstaller bundle, exiftool.exe is embedded as a
+        binary resource and extracted to a persistent temp directory on first
+        call so it can be executed by subprocess.
+        """
+        # 1. Running frozen (PyInstaller onefile) – extract from bundle
+        if getattr(sys, 'frozen', False):
+            bundle_dir = getattr(sys, '_MEIPASS', os.path.dirname(sys.executable))
+            src = os.path.join(bundle_dir, "exiftool.exe")
+            if os.path.exists(src):
+                # Copy to a writable temp location (MEIPASS may be read-only)
+                import tempfile
+                dest_dir = os.path.join(tempfile.gettempdir(), "CanonShutterCounter")
+                os.makedirs(dest_dir, exist_ok=True)
+                dest = os.path.join(dest_dir, "exiftool.exe")
+                if not os.path.exists(dest):
+                    shutil.copy2(src, dest)
+                return dest
 
-        for name in ["exiftool.exe", "exiftool"]:
-            if os.path.exists(name):
-                return name
+        # 2. Development / unfrozen – look next to the script or on PATH
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        for candidate in [
+            os.path.join(script_dir, "exiftool.exe"),
+            os.path.join(script_dir, "exiftool"),
+            "exiftool.exe",
+            "exiftool",
+        ]:
+            if os.path.exists(candidate):
+                return candidate
 
-        return None
+        return shutil.which("exiftool")
 
     @staticmethod
     def get_camera_shutter_rating(model):
