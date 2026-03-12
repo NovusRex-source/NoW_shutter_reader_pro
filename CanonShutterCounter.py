@@ -14,6 +14,7 @@ import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 import threading
 import os
+import sys
 
 # Import our modules
 from camera_metadata import CameraMetadataReader, USBCameraDetector, DependencyChecker
@@ -55,14 +56,29 @@ class CanonShutterCounter:
 
     # ------------------------------------------------------------------
     def _load_icon(self):
-        icon_path = os.path.join("Icon", "now_shuttercount.png")
-        if os.path.exists(icon_path):
+        # Resolve base path: PyInstaller bundle uses _MEIPASS, else script dir
+        if getattr(sys, 'frozen', False):
+            base = sys._MEIPASS
+        else:
+            base = os.path.dirname(os.path.abspath(__file__))
+
+        # Set .ico as window icon (Windows taskbar / title bar)
+        ico_path = os.path.join(base, "Icon", "now_shuttercount.ico")
+        if os.path.exists(ico_path):
             try:
-                icon = tk.PhotoImage(file=icon_path)
+                self.root.iconbitmap(ico_path)
+            except Exception:
+                pass
+
+        # Load PNG for iconphoto (high-DPI title bar icon)
+        png_path = os.path.join(base, "Icon", "now_shuttercount.png")
+        if os.path.exists(png_path):
+            try:
+                icon = tk.PhotoImage(file=png_path)
                 self.root.iconphoto(True, icon)
                 return icon
-            except:
-                return None
+            except Exception:
+                pass
         return None
 
     # ------------------------------------------------------------------
@@ -71,9 +87,11 @@ class CanonShutterCounter:
         if self.is_dark_mode:
             Theme.set_light()
             self.is_dark_mode = False
+            self.root.style.theme_use("flatly")
         else:
             Theme.set_dark()
             self.is_dark_mode = True
+            self.root.style.theme_use("darkly")
 
         # Destroy and rebuild everything
         for widget in self.root.winfo_children():

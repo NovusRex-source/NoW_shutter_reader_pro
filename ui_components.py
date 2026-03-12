@@ -107,8 +107,12 @@ def _card(parent, bg_key="surface", pad=None, **kw):
 
 def _label(parent, text, font=None, color_key="text", **kw):
     f = font or Theme.FONT_BODY
+    try:
+        parent_bg = parent.cget("bg")
+    except Exception:
+        parent_bg = Theme.get("surface")
     return tk.Label(parent, text=text, font=f, fg=Theme.get(color_key),
-                    bg=Theme.get("surface"), **kw)
+                    bg=parent_bg, **kw)
 
 
 def _divider(parent, bg_key="border"):
@@ -246,7 +250,8 @@ class ThemedText(tk.Frame):
         inner.pack(fill=BOTH, expand=YES)
 
         sb = tk.Scrollbar(inner, orient=VERTICAL,
-                          bg=Theme.get("surface2"), troughcolor=Theme.get("bg"),
+                          bg=Theme.get("surface2"),
+                          troughcolor=Theme.get("input_bg"),
                           activebackground=Theme.get("border"), bd=0, width=12)
         sb.pack(side=RIGHT, fill=Y)
 
