@@ -1,0 +1,102 @@
+================================================================================
+                    CANON SHUTTER COUNTER PRO - CREDITS
+================================================================================
+
+DEVELOPER
+---------
+Noel Wangler - NoW Photography
+Website: https://noelwangler.ch
+
+This software was developed to provide Canon R-series camera users with a
+professional tool for reading shutter count and camera metadata.
+
+
+SOFTWARE COMPONENTS & LICENSES
+-------------------------------
+
+1. ExifTool
+   Author: Phil Harvey
+   Website: https://exiftool.org/
+   License: Perl Artistic License / GPL
+   Purpose: Metadata extraction from CR3 files
+
+   ExifTool is a comprehensive metadata reading/writing tool that forms the
+   core functionality of this application for extracting camera information
+   from Canon CR3 RAW files.
+
+2. Python
+   Author: Python Software Foundation
+   Website: https://www.python.org/
+   License: Python Software Foundation License (PSF)
+   Purpose: Core programming language and runtime
+
+   Python provides the foundation for this application with its extensive
+   standard library and cross-platform compatibility.
+
+3. ttkbootstrap
+   Author: Israel Dryer
+   Website: https://ttkbootstrap.readthedocs.io/
+   License: MIT License
+   Purpose: Modern UI framework and theming
+
+   ttkbootstrap provides the modern, professional user interface with the
+   "flatly" theme and enhanced widgets used throughout the application.
+
+4. PyWin32
+   Author: Mark Hammond
+   Website: https://github.com/mhammond/pywin32
+   License: Python Software Foundation License (PSF)
+   Purpose: Windows COM interface for USB camera detection
+
+   PyWin32 enables direct communication with Windows Management Instrumentation
+   (WMI) for detecting connected Canon cameras via USB.
+
+5. Tkinter
+   Author: Python Standard Library
+   Website: https://docs.python.org/3/library/tkinter.html
+   License: Python Software Foundation License (PSF)
+   Purpose: GUI framework foundation
+
+   Tkinter provides the base GUI functionality that ttkbootstrap extends,
+   offering cross-platform window management and widget rendering.
+
+6. PyInstaller (Build Tool)
+   Author: PyInstaller Development Team
+   Website: https://pyinstaller.org/
+   License: GPL License with exception for bootloader
+   Purpose: Creating standalone executables
+
+   PyInstaller packages the Python application and all dependencies into
+   a single executable file for easy distribution.
+
+
+SPECIAL THANKS
+--------------
+- Canon EOS developer community for documentation and research
+- EOSInfo (astrojargon.net) for USB shutter count reading reference
+- Canon for the R-series camera system
+- All open-source contributors who make projects like this possible
+
+
+COPYRIGHT & LICENSE
+-------------------
+Canon Shutter Counter Pro
+Copyright (c) 2026 Noel Wangler - NoW Photography
+
+This software is provided "as is" without warranty of any kind.
+The developer is not affiliated with Canon Inc.
+
+All third-party components retain their original licenses and copyrights.
+Please refer to each component's license for terms of use and distribution.
+
+
+CONTACT
+-------
+For questions, suggestions, or support:
+Website: https://noelwangler.ch
+
+
+================================================================================
+Version 2.0 Professional Edition - Built with care for the photography community
+================================================================================
+

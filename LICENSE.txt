@@ -1,0 +1,92 @@
+================================================================================
+                    CANON SHUTTER COUNTER PRO - LICENSE
+================================================================================
+
+Copyright (c) 2026 Noel Wangler - NoW Photography
+Website: https://noelwangler.ch
+
+SOFTWARE LICENSE
+----------------
+This software is provided "as is", without warranty of any kind, express or
+implied, including but not limited to the warranties of merchantability,
+fitness for a particular purpose and noninfringement.
+
+In no event shall the authors or copyright holders be liable for any claim,
+damages or other liability, whether in an action of contract, tort or
+otherwise, arising from, out of or in connection with the software or the
+use or other dealings in the software.
+
+
+PERMISSION TO USE
+-----------------
+Permission is granted to use this software for personal and commercial
+purposes, subject to the following conditions:
+
+1. The software is provided for use with Canon R-series cameras
+2. The developer (Noel Wangler - NoW Photography) is not affiliated with
+   Canon Inc.
+3. Canon is a registered trademark of Canon Inc.
+4. This software is not endorsed by Canon Inc.
+
+
+THIRD-PARTY COMPONENTS
+----------------------
+This software includes or requires third-party components that are subject
+to their own licenses:
+
+1. ExifTool by Phil Harvey
+   License: Perl Artistic License / GPL
+   Website: https://exiftool.org/
+
+2. Python (Python Software Foundation)
+   License: Python Software Foundation License (PSF)
+   Website: https://www.python.org/
+
+3. ttkbootstrap by Israel Dryer
+   License: MIT License
+   Website: https://ttkbootstrap.readthedocs.io/
+
+4. PyWin32 by Mark Hammond
+   License: Python Software Foundation License (PSF)
+   Website: https://github.com/mhammond/pywin32
+
+5. Tkinter (Python Standard Library)
+   License: Python Software Foundation License (PSF)
+
+6. PyInstaller
+   License: GPL License with bootloader exception
+   Website: https://pyinstaller.org/
+
+For complete attribution and license details of all components, see CREDITS.txt
+
+
+DISCLAIMER
+----------
+This software is provided as a utility tool for photographers. The developer
+makes no claims about accuracy of shutter count readings and is not
+responsible for any decisions made based on information provided by this
+software.
+
+Canon R-series cameras typically do not store shutter count in CR3 file
+metadata. For accurate shutter count, use official Canon software or
+authorized service centers.
+
+
+TRADEMARKS
+----------
+- Canon, EOS, and R-series are registered trademarks of Canon Inc.
+- Windows is a registered trademark of Microsoft Corporation
+- Python is a registered trademark of the Python Software Foundation
+- All other trademarks are property of their respective owners
+
+
+CONTACT
+-------
+Developer: Noel Wangler - NoW Photography
+Website: https://noelwangler.ch
+
+
+================================================================================
+Version 2.0 Professional Edition - March 2026
+================================================================================
+
